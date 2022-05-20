@@ -34,7 +34,8 @@ dependencies {
     
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     //testCompile 대체
-    
+
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
     
 }
 

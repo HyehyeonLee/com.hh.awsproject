@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Getter //클래스 내 모든 필드의 Getter 메소드를 자동 생성
 @NoArgsConstructor //기본 생성자 자동 추가, public Posts() {}와 같은 효과
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity{
     @Id //해당 테이블의 PK 필드
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //PK의 생성 규칙                auto increment
