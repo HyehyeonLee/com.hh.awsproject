@@ -1,5 +1,6 @@
 package com.hh.awsproject.springboot.web;
 
+import com.hh.awsproject.springboot.config.auth.LoginUser;
 import com.hh.awsproject.springboot.config.auth.dto.SessionUser;
 import com.hh.awsproject.springboot.service.posts.PostsService;
 import com.hh.awsproject.springboot.web.dto.PostsResponseDto;
@@ -17,9 +18,9 @@ public class IndexController {
     private final PostsService postsService;
     private final HttpSession httpSession;
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        //SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if(user != null){
             model.addAttribute("userName", user.getName());
         }
